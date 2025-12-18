@@ -188,14 +188,6 @@ COLORTERM = "truecolor"
 
 详细 Vi mode 快捷键请查看 `conf.d/vi-mode.toml`
 
-### tmux 集成
-
-| 快捷键 | 功能 |
-|--------|------|
-| `Cmd+1~9` | 切换 tmux 窗口 |
-| `Cmd+D` | 水平分屏 |
-| `Cmd+Shift+D` | 垂直分屏 |
-
 ---
 
 ## 🔗 相关链接

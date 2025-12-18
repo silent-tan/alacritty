@@ -23,12 +23,6 @@
 # │ 【删除操作】                                                                │
 # │   Alt+Backspace     删除前一个单词                                          │
 # │   Cmd+Backspace     删除到行首                                              │
-# ├─────────────────────────────────────────────────────────────────────────────┤
-# │ 【tmux 集成】(前缀键: Ctrl+\)                                               │
-# │   Cmd+1~9           切换到 tmux 窗口 1-9                                    │
-# │   Cmd+Shift+[/]     切换到上一个/下一个 tmux 窗口                           │
-# │   Cmd+D             水平分屏                                                │
-# │   Cmd+Shift+D       垂直分屏                                                │
 # └─────────────────────────────────────────────────────────────────────────────┘
 #
 # 绑定格式说明:
@@ -36,7 +30,7 @@
 #   mods  = 修饰键 (Command, Control, Alt, Shift, 用 | 组合)
 #   mode  = 生效模式 (~Vi 表示非 Vi mode)
 #   action = Alacritty 内置动作
-#   chars  = 发送的字符序列 (用于 shell/tmux)
+#   chars  = 发送的字符序列 (用于 shell)
 
 # --- 窗口/应用级操作 ---
 [[keyboard.bindings]]
@@ -113,71 +107,3 @@ key = "Back"
 chars = "\u000c"
 key = "K"
 mods = "Command"
-
-# --- tmux：会话/窗口切换 ---
-[[keyboard.bindings]]
-chars = "\u001Cp"
-key = "LBracket"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001Cn"
-key = "RBracket"
-mods = "Command|Shift"
-
-# --- tmux：快速切换到指定窗口 ---
-[[keyboard.bindings]]
-chars = "\u001C1"
-key = "Key1"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C2"
-key = "Key2"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C3"
-key = "Key3"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C4"
-key = "Key4"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C5"
-key = "Key5"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C6"
-key = "Key6"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C7"
-key = "Key7"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C8"
-key = "Key8"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001C9"
-key = "Key9"
-mods = "Command"
-
-# --- tmux：分屏 ---
-[[keyboard.bindings]]
-chars = "\u001c\""
-key = "D"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001c%"
-key = "D"
-mods = "Command|Shift"
