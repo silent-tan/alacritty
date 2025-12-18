@@ -1,0 +1,34 @@
+# Alacritty 主配置文件
+# 通过 import 导入拆分的配置文件
+
+[general]
+import = [
+  "~/.config/alacritty/conf.d/colors.toml",
+  "~/.config/alacritty/conf.d/font.toml",
+  "~/.config/alacritty/conf.d/window.toml",
+  "~/.config/alacritty/conf.d/keybindings.toml",
+  "~/.config/alacritty/conf.d/vi-mode.toml",
+]
+live_config_reload = true
+working_directory = "None"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+blink_interval = 750
+unfocused_hollow = true
+
+[scrolling]
+history = 100000
+multiplier = 4
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[mouse]
+hide_when_typing = true

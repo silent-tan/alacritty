@@ -1,0 +1,183 @@
+# ╔═══════════════════════════════════════════════════════════════════════════╗
+# ║                      Alacritty 基本快捷键配置                              ║
+# ╚═══════════════════════════════════════════════════════════════════════════╝
+#
+# 本文件定义常用快捷键，包括窗口操作、光标移动和 tmux 集成。
+# Vi Mode 快捷键请查看 vi-mode.toml
+#
+# ┌─────────────────────────────────────────────────────────────────────────────┐
+# │                              快捷键速查表                                   │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【窗口/应用操作】                                                           │
+# │   Cmd+N             新建 Alacritty 实例                                     │
+# │   Cmd+T             新建窗口                                                │
+# │   Cmd+W             隐藏窗口                                                │
+# │   Cmd+Shift+W       退出 Alacritty                                          │
+# │   Cmd+R             刷新屏幕 + 清除历史                                      │
+# │   Cmd+K             清屏                                                    │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【光标移动 (Shell)】                                                        │
+# │   Alt+←/→           按单词左右移动                                          │
+# │   Cmd+←/→           跳到行首/行尾                                           │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【删除操作】                                                                │
+# │   Alt+Backspace     删除前一个单词                                          │
+# │   Cmd+Backspace     删除到行首                                              │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【tmux 集成】(前缀键: Ctrl+\)                                               │
+# │   Cmd+1~9           切换到 tmux 窗口 1-9                                    │
+# │   Cmd+Shift+[/]     切换到上一个/下一个 tmux 窗口                           │
+# │   Cmd+D             水平分屏                                                │
+# │   Cmd+Shift+D       垂直分屏                                                │
+# └─────────────────────────────────────────────────────────────────────────────┘
+#
+# 绑定格式说明:
+#   key   = 按键名 (如 "A", "Left", "F1", "Key1")
+#   mods  = 修饰键 (Command, Control, Alt, Shift, 用 | 组合)
+#   mode  = 生效模式 (~Vi 表示非 Vi mode)
+#   action = Alacritty 内置动作
+#   chars  = 发送的字符序列 (用于 shell/tmux)
+
+# --- 窗口/应用级操作 ---
+[[keyboard.bindings]]
+chars = "\f"
+key = "R"
+mode = "~Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "R"
+mode = "~Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "T"
+mods = "Command"
+
+# --- 光标移动：按单词左右跳转（Alt） ---
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "Right"
+mods = "Alt"
+
+# --- 光标移动：行首/行尾（Command） ---
+[[keyboard.bindings]]
+chars = "\u0001"
+key = "Left"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0005"
+key = "Right"
+mods = "Command"
+
+# --- 删除相关 ---
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001b\u007f"
+key = "Back"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "Back"
+
+# --- 清屏 ---
+[[keyboard.bindings]]
+chars = "\u000c"
+key = "K"
+mods = "Command"
+
+# --- tmux：会话/窗口切换 ---
+[[keyboard.bindings]]
+chars = "\u001Cp"
+key = "LBracket"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001Cn"
+key = "RBracket"
+mods = "Command|Shift"
+
+# --- tmux：快速切换到指定窗口 ---
+[[keyboard.bindings]]
+chars = "\u001C1"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C2"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C3"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C4"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C5"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C6"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C7"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C8"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001C9"
+key = "Key9"
+mods = "Command"
+
+# --- tmux：分屏 ---
+[[keyboard.bindings]]
+chars = "\u001c\""
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001c%"
+key = "D"
+mods = "Command|Shift"

@@ -1,0 +1,309 @@
+# ╔═══════════════════════════════════════════════════════════════════════════╗
+# ║                    Alacritty Vi Mode 完整配置                              ║
+# ╚═══════════════════════════════════════════════════════════════════════════╝
+#
+# Vi Mode 允许你使用 Vim 风格的键位浏览终端回滚缓冲区、选择文本和搜索。
+#
+# ┌─────────────────────────────────────────────────────────────────────────────┐
+# │                              快捷键速查表                                   │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【进入/退出】                                                               │
+# │   Ctrl+Shift+Space  进入/退出 Vi mode                                       │
+# │   Cmd+Escape        进入/退出 Vi mode (备用)                                │
+# │   Escape            退出 Vi mode / 清除选择                                 │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【基本移动】                                                                │
+# │   h / j / k / l     左 / 下 / 上 / 右                                       │
+# │   0                 跳到行首                                                │
+# │   ^                 跳到行首第一个非空字符                                  │
+# │   $                 跳到行尾                                                │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【单词移动】                                                                │
+# │   w / b             下一个/上一个单词开头                                   │
+# │   e                 当前/下一个单词结尾                                     │
+# │   W / B / E         按空白分隔的 WORD (大范围移动)                          │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【屏幕/文档位置】                                                           │
+# │   H / M / L         跳到屏幕 顶部/中间/底部                                 │
+# │   gg                跳到文档顶部                                            │
+# │   G                 跳到文档底部                                            │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【滚动】                                                                    │
+# │   Ctrl+f / Ctrl+b   向下/向上翻一页                                         │
+# │   Ctrl+d / Ctrl+u   向下/向上翻半页                                         │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【段落和括号】                                                              │
+# │   { / }             跳到上一个/下一个段落                                   │
+# │   %                 跳到匹配的括号                                          │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【搜索】                                                                    │
+# │   /                 向前搜索 (输入后按 Enter 确认)                          │
+# │   ?                 向后搜索                                                │
+# │   n / N             跳到下一个/上一个匹配                                   │
+# │   *                 搜索光标下的词 (向前)                                   │
+# │   #                 搜索光标下的词 (向后)                                   │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【选择模式】                                                                │
+# │   v                 字符选择模式 (移动光标扩展选区)                         │
+# │   Alt+v             语义选择 (自动选中光标下的单词/路径)                    │
+# │   V                 行选择模式                                              │
+# │   Ctrl+v            块选择模式 (矩形选区)                                   │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【操作】                                                                    │
+# │   y                 复制选中内容到剪贴板                                    │
+# │   o                 打开光标下的 URL                                        │
+# │   z                 将光标所在行居中显示                                    │
+# └─────────────────────────────────────────────────────────────────────────────┘
+#
+# 提示：进入 Vi mode 后，终端会显示光标位置。移动光标浏览历史输出，
+#       按 v 进入选择模式，移动扩展选区，按 y 复制，Escape 退出。
+
+# ===== 进入/退出 Vi mode =====
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Space"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "Escape"
+mode = "Vi"
+
+# ===== 基本移动 h/j/k/l =====
+[[keyboard.bindings]]
+action = "Left"
+key = "H"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Down"
+key = "J"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Up"
+key = "K"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Right"
+key = "L"
+mode = "Vi"
+
+# ===== 行内移动 0/^/$ =====
+[[keyboard.bindings]]
+action = "First"
+key = "Key0"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "FirstOccupied"
+key = "Key6"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Last"
+key = "Key4"
+mode = "Vi"
+mods = "Shift"
+
+# ===== 单词移动 w/b/e/W/B/E =====
+[[keyboard.bindings]]
+action = "WordRight"
+key = "W"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "WordLeft"
+key = "B"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "WordRightEnd"
+key = "E"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "SemanticRight"
+key = "W"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "SemanticLeft"
+key = "B"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "SemanticRightEnd"
+key = "E"
+mode = "Vi"
+mods = "Shift"
+
+# ===== 屏幕位置 H/M/L/gg/G =====
+[[keyboard.bindings]]
+action = "High"
+key = "H"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Middle"
+key = "M"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Low"
+key = "L"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "G"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "G"
+mode = "Vi"
+mods = "Shift"
+
+# ===== 滚动 Ctrl+f/b/d/u =====
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "F"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "B"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageDown"
+key = "D"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageUp"
+key = "U"
+mode = "Vi"
+mods = "Control"
+
+# ===== 段落和括号 {/}/% =====
+[[keyboard.bindings]]
+action = "ParagraphUp"
+key = "LBracket"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ParagraphDown"
+key = "RBracket"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Bracket"
+key = "Key5"
+mode = "Vi"
+mods = "Shift"
+
+# ===== 搜索 / ? n N * # =====
+[[keyboard.bindings]]
+action = "SearchForward"
+key = "Slash"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "SearchBackward"
+key = "Slash"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "SearchNext"
+key = "N"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "SearchPrevious"
+key = "N"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "SemanticSearchForward"
+key = "Key8"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "SemanticSearchBackward"
+key = "Key3"
+mode = "Vi"
+mods = "Shift"
+
+# ===== 选择 v/V/Ctrl+v/Alt+v =====
+[[keyboard.bindings]]
+# v：字符选择模式
+action = "ToggleNormalSelection"
+key = "V"
+mode = "Vi"
+
+[[keyboard.bindings]]
+# Alt+v：语义选择（自动选中光标下的单词/路径等）
+action = "ToggleSemanticSelection"
+key = "V"
+mode = "Vi"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleLineSelection"
+key = "V"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ToggleBlockSelection"
+key = "V"
+mode = "Vi"
+mods = "Control"
+
+# ===== 复制和操作 y/o/z =====
+[[keyboard.bindings]]
+action = "Copy"
+key = "Y"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "Y"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Open"
+key = "O"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "CenterAroundViCursor"
+key = "Z"
+mode = "Vi"

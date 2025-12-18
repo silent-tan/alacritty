@@ -1,0 +1,78 @@
+# ╔═══════════════════════════════════════════════════════════════════════════╗
+# ║                      Alacritty 颜色配置 (Aura 主题)                        ║
+# ╚═══════════════════════════════════════════════════════════════════════════╝
+#
+# 本文件定义终端的所有颜色，包括背景、前景、光标、选择区和 16 色调色板。
+#
+# ┌─────────────────────────────────────────────────────────────────────────────┐
+# │                              颜色配置说明                                   │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【主色调 primary】                                                          │
+# │   background    终端背景色                                                  │
+# │   foreground    默认文字颜色                                                │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【光标 cursor】                                                             │
+# │   text          光标内的文字颜色 (CellBackground = 使用单元格背景色)        │
+# │   cursor        光标本身的颜色                                              │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【选择区 selection】                                                        │
+# │   text          选中文字的颜色                                              │
+# │   background    选中区域的背景色                                            │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【标准 16 色】                                                              │
+# │   normal.*      标准色 (颜色 0-7)                                           │
+# │   bright.*      高亮色 (颜色 8-15)                                          │
+# │                                                                             │
+# │   颜色索引: black=0, red=1, green=2, yellow=3,                              │
+# │            blue=4, magenta=5, cyan=6, white=7                               │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【搜索高亮 search】                                                         │
+# │   matches         所有匹配项的颜色                                          │
+# │   focused_match   当前焦点匹配项的颜色                                      │
+# └─────────────────────────────────────────────────────────────────────────────┘
+#
+# 更换主题：可以从 https://github.com/alacritty/alacritty-theme 下载其他主题
+# 或直接修改下方的颜色值 (格式: "#RRGGBB")
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.primary]
+background = "#15141b"
+foreground = "#edecee"
+
+[colors.cursor]
+text = "CellBackground"
+cursor = "#a277ff"
+
+[colors.selection]
+background = "#a277ff"
+text = "#15141b"
+
+[colors.normal]
+black = "#110f18"
+red = "#ff6767"
+green = "#61ffca"
+yellow = "#ffca85"
+blue = "#a277ff"
+magenta = "#a277ff"
+cyan = "#61ffca"
+white = "#edecee"
+
+[colors.bright]
+black = "#4d4d4d"
+red = "#ff6767"
+green = "#61ffca"
+yellow = "#ffca85"
+blue = "#a277ff"
+magenta = "#a277ff"
+cyan = "#61ffca"
+white = "#edecee"
+
+[colors.search.focused_match]
+background = "#9F7AF5"
+foreground = "#ffffff"
+
+[colors.search.matches]
+background = "#ffffff"
+foreground = "#000000"

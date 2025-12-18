@@ -1,0 +1,60 @@
+# ╔═══════════════════════════════════════════════════════════════════════════╗
+# ║                         Alacritty 字体配置                                 ║
+# ╚═══════════════════════════════════════════════════════════════════════════╝
+#
+# 本文件定义终端使用的字体、大小和渲染参数。
+#
+# ┌─────────────────────────────────────────────────────────────────────────────┐
+# │                              字体配置说明                                   │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【字体族 font.*】                                                           │
+# │   normal        常规字体 (默认使用)                                         │
+# │   bold          粗体                                                        │
+# │   italic        斜体                                                        │
+# │   bold_italic   粗斜体                                                      │
+# │                                                                             │
+# │   每个字体族包含:                                                           │
+# │   - family: 字体名称 (需已安装在系统中)                                     │
+# │   - style:  字体样式 (Regular, Bold, Italic, etc.)                          │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【字体大小 size】                                                           │
+# │   单位为 pt (点)，推荐范围 12.0 - 18.0                                      │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【偏移调整】                                                                │
+# │   offset.x/y       字符间距调整 (y 影响行高)                                │
+# │   glyph_offset.x/y 字形在单元格内的位置微调                                 │
+# ├─────────────────────────────────────────────────────────────────────────────┤
+# │ 【其他选项】                                                                │
+# │   builtin_box_drawing  使用内置的框线字符绘制 (推荐开启)                    │
+# └─────────────────────────────────────────────────────────────────────────────┘
+#
+# 推荐字体: JetBrains Mono, Fira Code, Cascadia Code, SF Mono
+# Nerd Font 版本支持图标: https://www.nerdfonts.com/
+
+[font]
+size = 17.0
+builtin_box_drawing = true
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.offset]
+x = 0
+y = 8
+
+[font.glyph_offset]
+x = 0
+y = 2
