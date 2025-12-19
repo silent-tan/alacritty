@@ -40,15 +40,27 @@ resize_increments = true
 opacity = 1
 blur = true
 dynamic_title = true
+# dynamic_padding = true
 option_as_alt = "Both"
+# 启动模式（配置变更需要重启生效）
+#
+# 可以为如下的值:
+#   - Windowed: 窗口化
+#   - Maximized: 最大化窗口
+#   - Fullscreen: 全屏
+#
+# macos 可以独占的配置:
+#   - "SimpleFullscreen"
+# startup_mode = "SimpleFullscreen"
+startup_mode = "Windowed"
 
 [window.dimensions]
 columns = 190
 lines = 52
 
 [window.padding]
-x = 20
-y = 26
+x = 12
+y = 20
 
 # [window.position]
 # x = 0
